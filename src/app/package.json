@@ -1,0 +1,14 @@
+{
+  "name": "e-tunnel",
+  "version": "1.0.0",
+  "description": "SSH Tunnel App using electron",
+  "main": "app.js",
+  "author": "Sridhar",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "tunnel-ssh": "^4.1.4",
+    "nunjucks": "^3.1.6"
+  }
+}

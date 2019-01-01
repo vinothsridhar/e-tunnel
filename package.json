@@ -1,0 +1,28 @@
+{
+  "name": "e-tunnel",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "electron src/app",
+    "build:all": "electron-packager src/app --out=dist --asar --overwrite --all",
+    "build:linux": "electron-packager src/app e-tunnel --out=dist --overwrite --platform=linux --arch=x64",
+    "build:darwin": "electron-packager src/app --out=dist --asar --overwrite --platform=darwin --arch=x64",
+    "build:mas": "electron-packager src/app --out=dist --asar --overwrite --platform=mas --arch=x64",
+    "build:win": "electron-packager src/app e-tunnel --out=dist --overwrite --platform=win32 --arch=x64",
+    "pack": "electron-builder src/app",
+    "pack:deb64": "electron-installer-debian --src dist/e-tunnel-linux-x64/ --dest dist/installers/ --arch amd64 --config build_config_deb.json",
+    "pack:exe": "electron-installer-windows --src dist/e-tunnel-win32-x64 --dest dist/installers/ --config build_config_exe.json"
+  },
+  "build": {
+    "target": "deb"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^4.0.0",
+    "electron-builder": "^20.38.4",
+    "electron-installer-debian": "^1.0.1",
+    "electron-installer-windows": "^1.1.0",
+    "electron-packager": "^13.0.1"
+  }
+}

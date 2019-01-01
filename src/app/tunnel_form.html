@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Port Forwarding</title>
+    <link rel="stylesheet" href="./css/photon.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="js/tunnel_form.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="window">
+      <div class="window-content">
+        <form class="container" id="tunnelForm">
+          <input type="hidden" id="uuid"> 
+          <div class="form-group">
+            <label>Tunnel Name</label>
+            <input type="input" id="name" class="form-control" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <label>SSH Host</label>
+            <input type="input" id="host" class="form-control" placeholder="0.0.0.0">
+          </div>
+          <div class="form-group">
+            <label>SSH user name</label>
+            <input type="input" id="username" class="form-control" placeholder="yourname">
+          </div>
+          <div class="form-group">
+            <label>Destination Host</label>
+            <input type="input" id="dstHost" class="form-control" placeholder="db host name">
+          </div>
+          <div class="form-group">
+            <label>Destination Port</label>
+            <input type="input" id="dstPort" class="form-control" placeholder="port">
+          </div>
+          <div class="form-group">
+            <label>Local Host</label>
+            <input type="input" id="localHost" class="form-control" placeholder="host">
+          </div>
+          <div class="form-group">
+            <label>Local port</label>
+            <input type="input" id="localPort" class="form-control" placeholder="port">
+          </div>
+          <div class="form-group">
+            <label>Key file path</label>
+            <input type="input" id="privateKey" class="form-control">
+          </div>
+        </form>
+      </div>
+      <footer class="toolbar toolbar-footer">
+        <div class="toolbar-actions">
+          <button class="btn btn-default" onclick="tunnelFormCancelClick()">
+            Cancel
+          </button>
+          <button class="btn btn-primary pull-right" onclick="tunnelFormSaveClick()">
+            Save
+          </button>
+        </div>
+      </footer>
+    </div>
+  </body>
+  </html>

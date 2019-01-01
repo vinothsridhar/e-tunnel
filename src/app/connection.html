@@ -1,0 +1,30 @@
+<ul class="list-group">
+  <li class="list-group-header">
+    <input class="form-control" type="text" placeholder="Search for someone">
+  </li>
+  {% for t in TUNNELS %}
+  <li class="list-group-item">
+    <div class="media-body">
+      <strong>{{ t.name }}</strong>
+      <span id="helperText"></span>
+      <div class="btn-group pull-right">
+        <button
+        {% if isOpen(t.uuid) %}
+        class="btn btn-positive"
+        {% else %}
+        class="btn btn-default"
+        {% endif %}
+        onclick="connect('{{ t.uuid }}')">
+          <span class="icon icon-signal"></span>
+        </button>
+        <button class="btn btn-default" onclick="edit('{{ t.uuid }}')">
+          <span class="icon icon-pencil"></span>
+        </button>
+        <button class="btn btn-default" onclick="deleteTunnel('{{ t.uuid }}')">
+          <span class="icon icon-trash"></span>
+        </button>
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
